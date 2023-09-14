@@ -7,6 +7,7 @@ import {
     faSign,
     faSignIn,
     faPlus,
+    faEllipsisVertical,
 } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 //import 'tippy.js/dist/tippy.css'; // optional
@@ -66,6 +67,26 @@ function Header() {
                         Up load
                     </Button>
                     <Button primary>Log in</Button>
+
+                    <Tippy
+                        interactive
+                        visible
+                        render={(attrs) => (
+                            <div className={cx('menu-items')} tabIndex="-1" {...attrs}>
+                                <PopperWrapper>
+                                    <h4 className={cx('search-title')}> Accounts</h4>
+                                    <AccountItem />
+                                    <AccountItem />
+                                    <AccountItem />
+                                    <AccountItem />
+                                </PopperWrapper>
+                            </div>
+                        )}
+                    >
+                        <button className={cx('more-btn')}>
+                            <FontAwesomeIcon icon={faEllipsisVertical} />
+                        </button>
+                    </Tippy>
                 </div>
             </div>
         </header>
